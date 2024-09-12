@@ -1,0 +1,11 @@
+config SHIELD_CHIPPER_DONGLE
+	def_bool $(shields_list_contains,chipper_dongle)
+
+config SHIELD_CHIPPER_LEFT
+	def_bool $(shields_list_contains,chipper_left)
+
+config SHIELD_CHIPPER_RIGHT
+	def_bool $(shields_list_contains,chipper_right)
+
+config SHIELD_CHIPPER_PERIPHERAL_LEFT
+    def_bool $(shields_list_contains,corne_peripheral_left)

@@ -3,9 +3,15 @@ include:
     shield: chippy_left
   - board: seeeduino_xiao_ble
     shield: chippy_right
+
+  - board: seeeduino_xiao_ble
+    shield: chipper_dongle
   - board: seeeduino_xiao_ble
     shield: chipper_left nice_view_adapter nice_view
   - board: seeeduino_xiao_ble
     shield: chipper_right nice_view_adapter nice_view
+  - board: seeeduino_xiao_ble
+    shield: chipper_peripheral_right nice_view_adapter nice_view
+
   - shield: settings_reset
     board: seeeduino_xiao_ble

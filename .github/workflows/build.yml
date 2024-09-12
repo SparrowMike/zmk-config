@@ -3,30 +3,6 @@ name: Build
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  copy_keymaps:
-    runs-on: ubuntu-latest # Change to windows-latest or macos-latest if needed
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Copy chipper.keymap to boards/shields/chipper/
-        run: |
-          cp config/chipper.keymap config/boards/shields/chipper/chipper.keymap
-
-      - name: Copy chippy.keymap to boards/shields/chippy/
-        run: |
-          cp config/chippy.keymap config/boards/shields/chippy/chippy.keymap
-
-      - name: Commit and Push Changes
-        continue-on-error: true 
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Automated copy of chipper and chippy keymaps"
-          git push
-
   build:
     needs: copy_keymaps
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
