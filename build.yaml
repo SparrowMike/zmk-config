@@ -11,7 +11,7 @@ include:
   - board: seeeduino_xiao_ble
     shield: chipper_right nice_view_adapter nice_view
   - board: seeeduino_xiao_ble
-    shield: chipper_peripheral_right nice_view_adapter nice_view
+    shield: chipper_peripheral_left nice_view_adapter nice_view
 
   - shield: settings_reset
     board: seeeduino_xiao_ble
