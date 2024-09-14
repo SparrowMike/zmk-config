@@ -5,8 +5,7 @@ include:
     shield: chippy_right
 
   - board: seeeduino_xiao_ble
-    shield: chipper_dongle
-    snippet: zmk-usb-logging
+    shield: chipper_dongle_xiao
 
   - board: seeeduino_xiao_ble
     shield: chipper_left nice_view_adapter nice_view
