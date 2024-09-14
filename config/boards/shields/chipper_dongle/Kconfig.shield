@@ -8,4 +8,4 @@ config SHIELD_CHIPPER_RIGHT
 	def_bool $(shields_list_contains,chipper_right)
 
 config SHIELD_CHIPPER_PERIPHERAL_LEFT
-    def_bool $(shields_list_contains,corne_peripheral_left)
+    def_bool $(shields_list_contains,chipper_peripheral_left)

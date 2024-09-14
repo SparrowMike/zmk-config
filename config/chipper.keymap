@@ -100,7 +100,7 @@
   &kp Z                &kp X            &kp C                &kp V              &kp B        &kp N      &kp M              &kp COMMA             &kp DOT  &kp FSLH
                                         &mo 2                &mo 1              &kp ENTER    &kp SPACE  &kp BACKSPACE      &mo 2
             >;
-		        // label = "BASE";
+		        label = "BASE";
         };
 
         raise_layer {
@@ -116,7 +116,7 @@
   &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp N9        &kp NUMBER_0    &kp UNDER  &kp PLUS   &kp TILDE  &kp PIPE          &kp BACKSLASH
                               &trans        &trans        &trans          &trans     &trans     &trans
             >;
-		        // label = "SYMBOLS";
+		        label = "SYMBOLS";
         };
 
         lower_layer {
@@ -132,7 +132,7 @@
   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4        &trans    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans     &trans
                               &trans          &trans        &trans              &trans    &trans
             >;
-            // label = "DANGER";
+            label = "DANGER";
         };
     };
 };
