@@ -4,7 +4,7 @@ config SHIELD_CHIPPER_LEFT
 config SHIELD_CHIPPER_RIGHT
 	def_bool $(shields_list_contains,chipper_right)
 
-config SHIELD_CHIPPER_DONGLE
+config SHIELD_CHIPPER_DONGLE_XIAO
 	def_bool $(shields_list_contains,chipper_dongle_xiao)
 
 config SHIELD_CHIPPER_PERIPHERAL_LEFT
