@@ -13,7 +13,6 @@ include:
   - board: seeeduino_xiao_ble
     shield: chipper_right nice_view_adapter nice_view
   - board: seeeduino_xiao_ble
-    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     shield: chipper_peripheral_left nice_view_adapter nice_view
 
   - shield: settings_reset
