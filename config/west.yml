@@ -1,16 +1,26 @@
 manifest:
+  defaults:
+    remote: urob
+
   remotes:
-    - name: zmkfirmware
+    # - name: zmkfirmware
+    - name: upstream
       url-base: https://github.com/zmkfirmware
+    - name: urob
+      url-base: https://github.com/urob
     - name: caksoylar
       url-base: https://github.com/caksoylar
+
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
-      import: app/west.yml 
-    - name: zmk-rgbled-widget 
+      import: app/west.yml
+    - name: zmk-rgbled-widget
       remote: caksoylar
+      revision: main
+    - name: zmk-helpers
+      remote: urob
       revision: main
   self:
     path: config

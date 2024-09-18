@@ -1,28 +1,110 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-// #include "./includes/mods.dtsi"
-// #include "./includes/combos.dtsi"
+#include "zmk-helpers/helper.h"
+
+#define HM_TAPPING_TERM 300
+#define HM_TAPPING_TERM_FAST 200
+#define HM_PRIOR_IDLE 150
+
+#define BASE 0
+#define NUMS 1
+#define DANGER 2
 
 / {
     behaviors {
-        bhm: balanced_homerow_mods {
+
+        // Positional Homerow mods
+        // Homerow mods that prevent accidental activations when rolling keys,
+        // such as when typing `st` or `ne` on colemak-dh layouts or `as` on
+        // qwerty.
+        //
+        // Works by only allowing a mod to activate within tapping-term if
+        // it's on the opposite side of the keyboard or on the same side thumb
+        // keys.
+
+        // Further optimization using urob's timerless homerow mods method:
+        // https://github.com/urob/zmk-config#timeless-homerow-mods
+        hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;    // <---[[moderate duration]]
-            quick-tap-ms = <0>;
+            bindings = <&kp>,  <&kp>;
+
             flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <175>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        hm_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            hold-trigger-key-positions = <13 16 16 10 11 12 13 17 18 19>;
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            hold-trigger-on-release;
         };
+
+
+        // Positional Homerow mods for shift
+        // Use faster tapping term and disable some features that may
+        // cause false negatives.
+        hm_shift_l: hm_shift_l {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            // hold-trigger-on-release;
+        };
+
+        hm_shift_r: hm_shift_r {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            // hold-trigger-on-release;
+        };
+
+        /*
+         * Non-Positional Homerow Mods
+         * Used for &mm_grescm_gui behavior on left hand.
+         *
+         * Usage: &hm LSHFT T
+         * Tap: T
+         * Tap-Tap-Hold: Repeat T
+         * Hold: LSHIFT
+         */
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <200>;
+        };
+
     };
 
     combos {
@@ -90,10 +172,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-  &kp Q                &kp W            &kp E                &kp R              &kp T        &kp Y      &kp U              &kp I                 &kp O    &kp P
-  &bhm LEFT_CONTROL A  &bhm LEFT_ALT S  &bhm LEFT_COMMAND D  &bhm LEFT_SHIFT F  &kp G        &kp H      &bhm LEFT_SHIFT J  &bhm RIGHT_COMMAND K  &kp L    &kp SEMI
-  &kp Z                &kp X            &kp C                &kp V              &kp B        &kp N      &kp M              &kp COMMA             &kp DOT  &kp FSLH
-                                        &mo 2                &mo 1              &kp ENTER    &kp SPACE  &kp BACKSPACE      &mo 2
+  &kp Q                &kp W            &kp E                &kp R                    &kp T        &kp Y      &kp U                     &kp I                 &kp O    &kp P
+  &hm_l LEFT_CONTROL A &hm_l LEFT_ALT S &hm_l LEFT_COMMAND D &hm_shift_l LEFT_SHIFT F &kp G        &kp H      &hm_shift_r LEFT_SHIFT J  &hm_r RIGHT_COMMAND K &kp L    &kp SEMI
+  &kp Z                &kp X            &kp C                &kp V                    &kp B        &kp N      &kp M                     &kp COMMA             &kp DOT  &kp FSLH
+                                        &mo 2                &mo 1                    &kp ENTER    &kp SPACE  &kp BACKSPACE             &mo 2
             >;
 
             label = "BASE";
@@ -113,7 +195,7 @@
                               &trans        &trans        &trans          &trans     &trans     &trans
             >;
 
-            label = "NUMBS";
+            label = "NUMS";
         };
 
         lower_layer {
