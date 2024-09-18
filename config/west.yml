@@ -1,12 +1,13 @@
 manifest:
   remotes:
-    # - name: zmkfirmware
     - name: upstream
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
     - name: caksoylar
       url-base: https://github.com/caksoylar
+    - name: sparrowmike
+      url-base: https://github.com/SparrowMike
 
   projects:
     - name: zmk
@@ -16,8 +17,12 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
+    - name: sparrowmike
+      remote: mikesparrow
+      revision: urob
     - name: zmk-helpers
       remote: urob
       revision: main
+
   self:
     path: config
