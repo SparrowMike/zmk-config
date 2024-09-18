@@ -17,8 +17,8 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
-    - name: sparrowmike
-      remote: mikesparrow
+    - name: Cornie_XIAO 
+      remote: sparrowmike
       revision: urob
     - name: zmk-helpers
       remote: urob
