@@ -107,21 +107,21 @@
             timeout-ms = <COMBO_TERM_FAST>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
             bindings = <&kp ESCAPE>;
-            key-positions = <32 33>;
+            key-positions = <31 32>;
         };
 
         combo_tab {
             timeout-ms = <COMBO_TERM_FAST>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
             bindings = <&kp TAB>;
-            key-positions = <33 34>;
+            key-positions = <32 33>;
         };
 
         combo_grave {
             timeout-ms = <COMBO_TERM_FAST>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
             bindings = <&kp GRAVE>;
-            key-positions = <34 35>;
+            key-positions = <33 34>;
         };
 
         //INFO: Edit commands
@@ -144,14 +144,14 @@
             timeout-ms = <COMBO_TERM_FAST>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
             bindings = <&kp LG(C)>;
-            key-positions = <27 28>;
+            key-positions = <26 27>;
         };
 
         combo_paste {
             timeout-ms = <COMBO_TERM_FAST>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
             bindings = <&kp LG(V)>;
-            key-positions = <28 29>;
+            key-positions = <27 28>;
         };
 
         //INFO: Special characters
