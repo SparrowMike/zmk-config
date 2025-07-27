@@ -130,14 +130,14 @@
             timeout-ms = <COMBO_TERM_FAST>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
             bindings = <&kp LG(Z)>;
-            key-positions = <26 27>;
+            key-positions = <25 26>;
         };
 
         combo_redo {
             timeout-ms = <COMBO_TERM_FAST>;
             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
             bindings = <&kp LS(LG(Z))>;
-            key-positions = <29 30>;
+            key-positions = <28 29>;
         };
 
         combo_copy {
