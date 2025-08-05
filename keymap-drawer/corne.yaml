@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: corne}
 layers:
   BASE:
-  - TAB
+  - {t: ▽, type: trans}
   - Q
   - W
   - E
@@ -12,20 +12,20 @@ layers:
   - I
   - O
   - P
-  - Ctl+BACKSPACE
-  - LEFT CONTROL
-  - {t: A, h: LEFT CONTROL}
-  - {t: S, h: LEFT ALT}
-  - {t: D, h: LEFT COMMAND}
-  - {t: F, h: LEFT SHIFT}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: A, h: LCTRL}
+  - {t: S, h: LALT}
+  - {t: D, h: LGUI}
+  - {t: F, h: LSHFT}
   - G
   - H
-  - {t: J, h: LEFT SHIFT}
-  - {t: K, h: RIGHT COMMAND}
-  - L
-  - ;
-  - ENTER
-  - LEFT SHIFT
+  - {t: J, h: RSHFT}
+  - {t: K, h: RGUI}
+  - {t: L, h: RALT}
+  - {t: ;, h: RCTRL}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - Z
   - X
   - C
@@ -36,12 +36,12 @@ layers:
   - ','
   - .
   - /
-  - RIGHT COMMAND
+  - {t: ▽, type: trans}
   - DANGER
   - NUMS
   - ENTER
-  - SPACE
-  - BACKSPACE
+  - {t: SPACE, h: NUMS}
+  - {t: BACKSPACE, h: DANGER}
   - DANGER
   NUMS:
   - {t: ▽, type: trans}
@@ -130,23 +130,49 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
+- p: [3, 4]
+  k: (
+- p: [7, 8]
+  k: )
+- p: [1, 2]
+  k: '['
+- p: [9, 10]
+  k: ']'
+- p: [2, 3]
+  k: '{'
+- p: [8, 9]
+  k: '}'
+- p: [18, 19]
+  k: '&caps_word'
+- p: [1, 2, 3]
+  k: ESCAPE
 - p: [31, 32]
   k: ESCAPE
 - p: [32, 33]
   k: TAB
 - p: [33, 34]
   k: '`'
-- p: [1, 2]
-  k: ESCAPE
 - p: [25, 26]
   k: Gui+Z
+- p: [28, 29]
+  k: Sft+Gui+Z
+- p: [26, 27]
+  k: Gui+C
+- p: [27, 28]
+  k: Gui+V
 - p: [22, 21]
   k: ''''
-- p: [26, 27]
-  k: Gui+X
-- p: [27, 28]
-  k: Gui+C
-- p: [28, 29]
-  k: Gui+V
-- p: [17, 18]
-  k: ESCAPE
+- p: [4, 16]
+  k: _
+- p: [7, 19]
+  k: '-'
+- p: [8, 20]
+  k: +
+- p: [9, 21]
+  k: '='
+- p: [5, 6]
+  k: BT CLR
+  l: [NUMS]
+- p: [27, 29]
+  k: DANGER
+  l: [NUMS]
