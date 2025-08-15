@@ -1,0 +1,13 @@
+file_format: "1"
+id: chipper
+name: CHIPPER
+type: shield
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
+siblings:
+  - chipper_left
+  - chipper_right
+  - chipper_dongle_nano
+  - chipper_dongle_xiao
+  - chipper_peripheral_left

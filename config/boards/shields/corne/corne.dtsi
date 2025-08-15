@@ -10,7 +10,57 @@
     chosen {
         zephyr,display = &oled;
         zmk,kscan = &kscan0;
-        zmk,matrix-transform = &default_transform;
+    };
+
+    physical_layout: physical_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Default";
+        transform = <&default_transform>;
+        kscan = <&kscan0>;
+        keys  //                     w   h    x    y     rot   rx   ry
+            = <&key_physical_attrs 100 100    0   37       0    0    0>
+            , <&key_physical_attrs 100 100  100   12       0    0    0>
+            , <&key_physical_attrs 100 100  200    0       0    0    0>
+            , <&key_physical_attrs 100 100  300   12       0    0    0>
+            , <&key_physical_attrs 100 100  400   25       0    0    0>
+            , <&key_physical_attrs 100 100  500   37       0    0    0>
+            , <&key_physical_attrs 100 100  700   37       0    0    0>
+            , <&key_physical_attrs 100 100  800   25       0    0    0>
+            , <&key_physical_attrs 100 100  900   12       0    0    0>
+            , <&key_physical_attrs 100 100 1000    0       0    0    0>
+            , <&key_physical_attrs 100 100 1100   12       0    0    0>
+            , <&key_physical_attrs 100 100 1200   37       0    0    0>
+            , <&key_physical_attrs 100 100    0  137       0    0    0>
+            , <&key_physical_attrs 100 100  100  112       0    0    0>
+            , <&key_physical_attrs 100 100  200  100       0    0    0>
+            , <&key_physical_attrs 100 100  300  112       0    0    0>
+            , <&key_physical_attrs 100 100  400  125       0    0    0>
+            , <&key_physical_attrs 100 100  500  137       0    0    0>
+            , <&key_physical_attrs 100 100  700  137       0    0    0>
+            , <&key_physical_attrs 100 100  800  125       0    0    0>
+            , <&key_physical_attrs 100 100  900  112       0    0    0>
+            , <&key_physical_attrs 100 100 1000  100       0    0    0>
+            , <&key_physical_attrs 100 100 1100  112       0    0    0>
+            , <&key_physical_attrs 100 100 1200  137       0    0    0>
+            , <&key_physical_attrs 100 100    0  237       0    0    0>
+            , <&key_physical_attrs 100 100  100  212       0    0    0>
+            , <&key_physical_attrs 100 100  200  200       0    0    0>
+            , <&key_physical_attrs 100 100  300  212       0    0    0>
+            , <&key_physical_attrs 100 100  400  225       0    0    0>
+            , <&key_physical_attrs 100 100  500  237       0    0    0>
+            , <&key_physical_attrs 100 100  700  237       0    0    0>
+            , <&key_physical_attrs 100 100  800  225       0    0    0>
+            , <&key_physical_attrs 100 100  900  212       0    0    0>
+            , <&key_physical_attrs 100 100 1000  200       0    0    0>
+            , <&key_physical_attrs 100 100 1100  212       0    0    0>
+            , <&key_physical_attrs 100 100 1200  237       0    0    0>
+            , <&key_physical_attrs 100 100  400  325       0    0    0>
+            , <&key_physical_attrs 100 100  500  337       0    0    0>
+            , <&key_physical_attrs 100 100  600  350       0    0    0>
+            , <&key_physical_attrs 100 100  600  350       0    0    0>
+            , <&key_physical_attrs 100 100  700  337       0    0    0>
+            , <&key_physical_attrs 100 100  800  325       0    0    0>
+            ;
     };
 
     default_transform: keymap_transform_0 {
