@@ -37,12 +37,12 @@ layers:
   - .
   - /
   - {t: ▽, type: trans}
-  - DANGER
+  - MOUSE
   - NUMS
   - ENTER
-  - {t: SPACE, h: NUMS}
+  - {t: SPACE, h: MOUSE}
   - {t: BACKSPACE, h: DANGER}
-  - DANGER
+  - '&studio_unlock'
   NUMS:
   - {t: ▽, type: trans}
   - '!'
@@ -120,7 +120,50 @@ layers:
   - {t: ▽, type: trans}
   - VOLUME DOWN
   - VOLUME UP
+  - MOUSE
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  MOUSE:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&msc SCRL_UP'
+  - '&msc SCRL_DOWN'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mmv MOVE_LEFT'
+  - '&mmv MOVE_DOWN'
+  - '&mmv MOVE_UP'
+  - '&mmv MOVE_RIGHT'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp LCLK'
+  - '&mkp MCLK'
+  - '&mkp RCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
@@ -176,3 +219,11 @@ combos:
 - p: [27, 29]
   k: DANGER
   l: [NUMS]
+- p: [15, 16]
+  k: '&mkp LCLK'
+- p: [19, 20]
+  k: '&mkp LCLK'
+- p: [16, 17]
+  k: '&mkp RCLK'
+- p: [20, 21]
+  k: '&mkp RCLK'
