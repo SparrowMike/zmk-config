@@ -21,6 +21,7 @@
 #define BASE 0
 #define NUMS 1
 #define DANGER 2
+#define MOUSE 3
 
 /* use helper macros to define left and right hand keys */
 
@@ -192,6 +193,35 @@
             key-positions = <20 31>;
             layers = <2>;
         };
+
+        //INFO: Mouse controls
+        combo_mouse_left_click_sd {
+            timeout-ms = <COMBO_TERM_FAST>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+            bindings = <&mkp LCLK>;
+            key-positions = <13 14>;
+        };
+
+        combo_mouse_left_click_jk {
+            timeout-ms = <COMBO_TERM_FAST>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+            bindings = <&mkp LCLK>;
+            key-positions = <16 17>;
+        };
+
+        combo_mouse_right_click_df {
+            timeout-ms = <COMBO_TERM_FAST>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+            bindings = <&mkp RCLK>;
+            key-positions = <14 15>;
+        };
+
+        combo_mouse_right_click_kl {
+            timeout-ms = <COMBO_TERM_FAST>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+            bindings = <&mkp RCLK>;
+            key-positions = <17 18>;
+        };
     };
 
     behaviors {
@@ -231,7 +261,7 @@
        &kp Q          &kp W         &kp E         &kp R          &kp T          &kp Y        &kp U            &kp I         &kp O         &kp P
        &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &hm_l LSHFT F  &kp G          &kp H        &hm_r RSHFT J    &hm_r RGUI K  &hm_r RALT L  &hm_r RCTRL SEMI
 &kp Q  &kp Z          &kp X         &kp C         &kp V          &kp B          &kp N        &kp M            &kp COMMA     &kp DOT       &kp SLASH         &kp SLASH
-                                    &mo 2         &mo 1          &kp ENTER      &kp SPACE    &lt 2 BACKSPACE  &mo 2
+                                    &mo 3         &mo 1          &kp ENTER      &kp SPACE    &lt 2 BACKSPACE  &mo 3
             >;
         };
 
@@ -254,5 +284,15 @@
                                           &trans          &trans        &trans              &trans    &trans             &trans
             >;
         };
+
+        mouse_layer {
+            display-name = "MOUSE";
+            bindings = <
+        &trans  &trans &trans  &trans  &trans      &trans         &trans         &msc SCRL_UP  &msc SCRL_DOWN  &trans
+        &trans  &trans &trans  &trans  &trans      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP  &mmv MOVE_RIGHT &trans
+&trans  &trans  &trans &trans  &trans  &trans      &trans         &mkp LCLK      &mkp MCLK     &mkp RCLK       &trans  &trans
+                       &trans  &trans  &trans      &trans         &trans         &trans
+            >;                
+        };                    
     };
 };
