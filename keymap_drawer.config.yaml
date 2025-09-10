@@ -1,6 +1,6 @@
 draw_config:
-  key_w: 60.0
-  key_h: 56.0
+  key_w: 80.0
+  key_h: 75.0
   split_gap: 30.0
   combo_w: 28.0
   combo_h: 26.0
@@ -27,7 +27,9 @@ draw_config:
     /* Key text styling */
     .key .tap, .key .hold, .key .shifted { 
       fill: #ebdbb2; 
-      font-family: 'Fira Code', 'JetBrains Mono', monospace; 
+      font-family: 'Fira Code', 'JetBrains Mono', monospace;
+      text-rendering: optimizeLegibility;
+      shape-rendering: crispEdges; 
     }
     
     /* Layer-specific key colors using Gruvbox palette */
