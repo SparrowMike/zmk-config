@@ -149,7 +149,7 @@ svg {
 
 /* Key text styling */
 .key .tap, .key .hold, .key .shifted { 
-  fill: #ebdbb2; 
+  fill: #ffffff; 
   font-family: 'Fira Code', 'JetBrains Mono', monospace;
   text-rendering: optimizeLegibility;
   shape-rendering: crispEdges; 
@@ -157,7 +157,7 @@ svg {
 
 /* Layer-specific key colors using Gruvbox palette */
 .key.layer-0 { fill: #3c3836; } /* Default layer - dark1 */
-.key.layer-1 { fill: #cc241d; } /* Lower layer - bright red */
+.key.layer-1 { fill: #fb4934; } /* Lower layer - bright red */
 .key.layer-2 { fill: #458588; } /* Raise layer - bright blue */
 .key.layer-3 { fill: #b16286; } /* Mouse layer - bright purple */
 
@@ -190,7 +190,7 @@ svg {
 
 /* Layer labels and headers */
 .layer-header { 
-  fill: #ebdbb2; 
+  fill: #ffffff; 
   font-size: 16px; 
   font-weight: bold; 
 }
@@ -201,9 +201,9 @@ svg {
 .none { fill: #282828; opacity: 0.3; } /* Empty keys */
 
 /* Improve text contrast */
-.key.layer-1 .tap, .key.layer-1 .hold { fill: #fbf1c7; }
-.key.layer-2 .tap, .key.layer-2 .hold { fill: #fbf1c7; }
-.key.layer-3 .tap, .key.layer-3 .hold { fill: #fbf1c7; }
+.key.layer-1 .tap, .key.layer-1 .hold { fill: #ffffff; }
+.key.layer-2 .tap, .key.layer-2 .hold { fill: #ffffff; }
+.key.layer-3 .tap, .key.layer-3 .hold { fill: #ffffff; }
 .held .tap, .held .hold { fill: #1d2021; font-weight: bold; }
 </style>
 <g transform="translate(30, 0)" class="layer-default">
