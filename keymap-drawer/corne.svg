@@ -147,12 +147,24 @@ svg {
   stroke-width: 1; 
 }
 
-/* Key text styling */
+/* Key text styling - FIXED */
 .key .tap, .key .hold, .key .shifted { 
   fill: #ffffff; 
   font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  text-rendering: optimizeLegibility;
-  shape-rendering: crispEdges; 
+  text-rendering: geometricPrecision;
+  shape-rendering: crispEdges;
+  stroke: none !important;
+  stroke-width: 0;
+  paint-order: normal;
+  filter: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Remove any text shadows globally */
+text {
+  text-shadow: none;
+  stroke: none;
+  stroke-width: 0;
 }
 
 /* Layer-specific key colors using Gruvbox palette */
@@ -185,26 +197,43 @@ svg {
 }
 .combo .label { 
   fill: #1d2021; 
-  font-weight: bold; 
+  font-weight: bold;
+  stroke: none;
+  stroke-width: 0;
 }
 
 /* Layer labels and headers */
 .layer-header { 
   fill: #ffffff; 
   font-size: 16px; 
-  font-weight: bold; 
+  font-weight: bold;
+  stroke: none;
+  stroke-width: 0;
 }
 
-/* Special key types */
-.mod { fill: #d65d0e; } /* Modifier keys - bright orange */
-.trans { fill: #928374; opacity: 0.7; } /* Transparent keys - gray */
+/* Special key types - tweaked colors */
+.mod { fill: #689d6a; } /* Modifier keys - changed to aqua to differentiate from held */
+.trans { fill: #928374; opacity: 0.5; } /* Transparent keys - reduced opacity */
 .none { fill: #282828; opacity: 0.3; } /* Empty keys */
 
 /* Improve text contrast */
-.key.layer-1 .tap, .key.layer-1 .hold { fill: #ffffff; }
-.key.layer-2 .tap, .key.layer-2 .hold { fill: #ffffff; }
-.key.layer-3 .tap, .key.layer-3 .hold { fill: #ffffff; }
-.held .tap, .held .hold { fill: #1d2021; font-weight: bold; }
+.key.layer-1 .tap, .key.layer-1 .hold { 
+  fill: #ffffff;
+  stroke: none;
+}
+.key.layer-2 .tap, .key.layer-2 .hold { 
+  fill: #ffffff;
+  stroke: none;
+}
+.key.layer-3 .tap, .key.layer-3 .hold { 
+  fill: #ffffff;
+  stroke: none;
+}
+.held .tap, .held .hold { 
+  fill: #1d2021; 
+  font-weight: bold;
+  stroke: none;
+}
 </style>
 <g transform="translate(30, 0)" class="layer-BASE">
 <text x="0" y="28" class="label" id="BASE">BASE:</text>
