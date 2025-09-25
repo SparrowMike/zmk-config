@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/M165437
     - name: bluedrink9
       url-base: https://github.com/bluedrink9
+    - name: gpeye
+      url-base: https://github.com/GPeye
 
   projects:
     - name: zmk
@@ -24,6 +26,9 @@ manifest:
       revision: main
     - name: nice-view-gem
       remote: m165437
+      revision: main
+    - name: hammerbeam-slideshow
+      remote: gpeye
       revision: main
     - name: zmk-poor-mans-led-indicator
       remote: bluedrink9
