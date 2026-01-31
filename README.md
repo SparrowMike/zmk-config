@@ -16,8 +16,3 @@ This repository contains ZMK firmware configurations for various keyboards with 
 
 ### Chippy
 ![Chippy Layout](keymap-drawer/chippy.svg)
-
-## Files
-
-- Configuration files are located in the `config/` directory
-- Visual keymap representations are generated using [@keymap-drawer](https://github.com/caksoylar/keymap-drawer) and stored in `keymap-drawer/`

@@ -117,4 +117,6 @@ draw_config:
     
 parse_config:
   preprocess: true
+  zmk_additional_includes:
+    - "zmk-helpers/include"
   zmk_combos: {}

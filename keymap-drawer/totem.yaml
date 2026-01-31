@@ -197,14 +197,11 @@ combos:
   k: +
 - p: [8, 18]
   k: '='
-- p: [20, 31]
-  k: BT CLR
-  l: [DANGER]
-- p: [13, 14]
+- p: [12, 13]
   k: '&mkp LCLK'
 - p: [16, 17]
   k: '&mkp LCLK'
-- p: [14, 15]
+- p: [13, 14]
   k: '&mkp RCLK'
 - p: [17, 18]
   k: '&mkp RCLK'

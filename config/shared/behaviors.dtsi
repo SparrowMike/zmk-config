@@ -1,0 +1,44 @@
+// Shared homerow mod behaviors — timing can be overridden per-board
+// by #define-ing before #include-ing this file.
+
+#ifndef HM_TAPPING_TERM
+#define HM_TAPPING_TERM 180
+#endif
+#ifndef HM_TAPPING_TERM_FAST
+#define HM_TAPPING_TERM_FAST 150
+#endif
+#ifndef HM_PRIOR_IDLE
+#define HM_PRIOR_IDLE 120
+#endif
+
+&lt { tapping-term-ms = <175>; };
+
+/ {
+    behaviors {
+        hm_l: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <HM_TAPPING_TERM_FAST>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        hm_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <HM_TAPPING_TERM_FAST>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            hold-trigger-on-release;
+        };
+    };
+};
